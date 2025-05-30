@@ -3,6 +3,16 @@
 ' Modified : 17-May-2025
 ' ***********************************************************************
 
+' This source code is freely distributed as part of the "DevCase Class Library for .NET Developers".
+'
+' If you find this library useful, consider supporting my work by purchasing the full DevCase suite.
+' It includes a powerful set of APIs covering a wide range of features and development topics.
+'
+' Visit the purchase page here:
+' https://github.com/ElektroStudios/DevCase.github.io
+'
+' Thank you for your support!
+
 #Region " Usage Examples "
 
 ' Dim repairCommand As New RarRepairCommand("C:\Directory\*.rar") With {
