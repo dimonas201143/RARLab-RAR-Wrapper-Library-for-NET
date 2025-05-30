@@ -20,23 +20,19 @@ windows-forms
 winforms
  -->
 
-# 📦 RARLab's RAR .NET Wrapper
+# 📦 RARLab's `rar.exe` .NET Wrapper
 
-### PROJECT DESCRIPTION
-
-A full-featured .NET wrapper for RARLab's official rar.exe command-line tool. This library empowers .NET developers to seamlessly access and control almost all the functionality provided by rar.exe — such as compressing, extracting, listing, testing, creating recovery volumes and managing RAR archives — from within their applications.
-
-Whether you're building backup utilities, file management systems, or custom archiving tools, this wrapper offers you a clean, object-oriented interface to use rar.exe without the need to manually write command-line arguments or parse outputs.
+A full-featured .NET wrapper for RARLab's official `rar.exe` command-line tool. This library empowers .NET developers to seamlessly access and control almost all the functionality provided by `rar.exe` — such as compressing, extracting, listing, testing, creating recovery volumes and managing RAR archives — from within their applications.
 
 ------------------
 
 ## 👋 Introduction
 
-RARLab provides a powerful command-line tool, rar.exe, with deep support for creating and extracting RAR archives. However, using it directly from .NET requires manually spawning processes, constructing CLI arguments, and parsing the textual output — a repetitive and error-prone task.
+RARLab provides a powerful command-line tool, `rar.exe`, with deep support for creating and extracting RAR archives. However, using it directly from .NET requires manually spawning processes, constructing CLI arguments, and parsing the textual output — a repetitive and error-prone task.
 
-This project eliminates that friction by wrapping a range of rar.exe functionalities in an intuitive .NET interface. With this wrapper, you can:
+This project eliminates that friction by wrapping a range of `rar.exe` functionalities in an intuitive .NET interface.
 
-The wrapper is written in VB.NET but is fully compatible with both VB.NET and C# projects. It is also capable to migrate to net core with no issues, as it has no dependencies except an user provided rar.exe file itself.
+The wrapper is implemented in VB.NET but is fully compatible with both VB.NET and C# projects. It targets .NET Framework 4.8.1 by default, but can be easily migrated to .NET 5+ without issues, as it relies on no external dependencies other than the user-supplied `rar.exe` executable.
 
 ## 👌 Features
 
@@ -59,17 +55,17 @@ Expose almost the full range of RAR’s features: recovery records, archive lock
 Create and extract archives split into multiple volumes — ideal for large datasets or removable media.
 
 ✅ Error Handling and Output Parsing
-Automatically parse output from rar.exe, detect errors, and raise structured exceptions where appropriate.
+Automatically parse output from `rar.exe`, detect errors, and raise structured exceptions where appropriate.
 
 ✅ Cross-language Usability
 Though written in VB.NET, the wrapper is compiled into a .NET assembly (a dll library), making it easy to use in C#, F#, and other .NET-supported languages.
 
 ✅ No External Dependencies
-Only dependency is rar.exe from RARLab — no third-party libraries required.
+Only dependency is `rar.exe` from RARLab — no third-party libraries required.
 
 ## 🧰 Requirements
 
-- [`rar.exe`](https://www.rarlab.com/download.htm) from RARLab's WinRAR (command-line version only). Please note that rar.exe requires is not free, it requires a product license (that one from a licensed WinRAR product).
+- [`rar.exe`](https://www.rarlab.com/download.htm) from RARLab's WinRAR (command-line version only). Please note that `rar.exe` is not free, it requires a product license (the same from a licensed `WinRAR` product).
 
 ## 🤖 Getting Started
 
@@ -77,7 +73,7 @@ Clone this repository or download the latest compilation by clicking [here](http
 
 Add the project to your solution or reference the compiled DLL file.
 
-Ensure rar.exe is present in your system environment path or specify its full path in the wrapper configuration. A product license would also be required for almost all the rar.exe functionalities.
+Ensure `rar.exe` is present in your system environment path or specify its full path in the wrapper configuration. A product license would also be required for almost all the `rar.exe` functionalities.
 
 Start compressing or extracting archives with simple method calls!
 
@@ -89,7 +85,7 @@ Explore the complete list of changes, bug fixes, and improvements across differe
 
 This Work (the repository and the content provided in) is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the Work or the use or other dealings in the Work.
 
-This Work has no affiliation, approval or endorsement by the author(s) of the third-party libraries used by this Work, nor by RARLab, the registered company and trademark owner of rar.exe.
+This Work has no affiliation, approval or endorsement by the author(s) of the third-party libraries used by this Work, nor by RARLab, the registered company and trademark owner of `rar.exe`.
 
 ## 💪 Contributing
 
