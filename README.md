@@ -65,7 +65,8 @@ Only dependency is `rar.exe` from RARLab — no third-party libraries required.
 
 ## 🧰 Requirements
 
-- [`rar.exe`](https://www.rarlab.com/download.htm) from RARLab's WinRAR (command-line version only). Please note that `rar.exe` is not free, it requires a product license (the same from a licensed `WinRAR` product).
+- [`rar.exe`](https://www.rarlab.com/download.htm) from RARLab's WinRAR (command-line version only). 
+  Please note that `rar.exe` is not free, it requires a product license (the same from a licensed `WinRAR` product).
 
 ## 🤖 Getting Started
 
@@ -73,7 +74,7 @@ Clone this repository or download the latest compilation by clicking [here](http
 
 Add the project to your solution or reference the compiled DLL file.
 
-Ensure `rar.exe` is present in your system environment path or specify its full path in the wrapper configuration. A product license would also be required for almost all the `rar.exe` functionalities.
+Ensure `rar.exe` is present in your system environment path or specify its full path in the wrapper configuration. A working product license would also be required for using almost all the `rar.exe` functionalities.
 
 Start compressing or extracting archives with simple method calls!
 
@@ -85,7 +86,7 @@ Explore the complete list of changes, bug fixes, and improvements across differe
 
 This Work (the repository and the content provided in) is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the Work or the use or other dealings in the Work.
 
-This Work has no affiliation, approval or endorsement by the author(s) of the third-party libraries used by this Work, nor by RARLab, the registered company and trademark owner of `rar.exe`.
+This Work has no affiliation, approval or endorsement by RARLab, the registered company and trademark owner of `rar.exe`.
 
 ## 💪 Contributing
 
