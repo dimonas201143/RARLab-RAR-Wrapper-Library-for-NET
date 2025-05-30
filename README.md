@@ -1,77 +1,99 @@
 <!-- Common Project Tags:
-command-line 
-console-applications 
-desktop-app 
-desktop-application 
-dotnet 
-dotnet-core 
-netcore 
-netframework 
-netframework48 
-tool 
-tools 
-vbnet 
-visualstudio 
-windows 
-windows-app 
-windows-application 
-windows-applications 
-windows-forms 
-winforms 
+command-line
+console-applications
+desktop-app
+desktop-application
+dotnet
+dotnet-core
+netcore
+netframework
+netframework48
+tool
+tools
+vbnet
+visualstudio
+windows
+windows-app
+windows-application
+windows-applications
+windows-forms
+winforms
  -->
 
-# PROJECT NAME
+# 📦 RARLab's RAR .NET Wrapper
 
 ### PROJECT DESCRIPTION
+
+A full-featured .NET wrapper for RARLab's official rar.exe command-line tool. This library empowers .NET developers to seamlessly access and control almost all the functionality provided by rar.exe — such as compressing, extracting, listing, testing, creating recovery volumes and managing RAR archives — from within their applications.
+
+Whether you're building backup utilities, file management systems, or custom archiving tools, this wrapper offers you a clean, object-oriented interface to use rar.exe without the need to manually write command-line arguments or parse outputs.
 
 ------------------
 
 ## 👋 Introduction
 
-INTRODUCTION TEXT
+RARLab provides a powerful command-line tool, rar.exe, with deep support for creating and extracting RAR archives. However, using it directly from .NET requires manually spawning processes, constructing CLI arguments, and parsing the textual output — a repetitive and error-prone task.
+
+This project eliminates that friction by wrapping a range of rar.exe functionalities in an intuitive .NET interface. With this wrapper, you can:
+
+The wrapper is written in VB.NET but is fully compatible with both VB.NET and C# projects. It is also capable to migrate to net core with no issues, as it has no dependencies except an user provided rar.exe file itself.
 
 ## 👌 Features
 
-FEATURES TEXT
+✅ Archive Creation and Modification
+Create, fresh or update .rar files from one or multiple files/folders, with support for recursive inclusion, solid archives, volume splitting, and compression tuning.
 
-## 🖼️ Screenshots
+✅ Extraction Support
+Extract archives to custom locations, with full support for password-protected archives, overwrite rules, and directory flattening.
 
-![screenshot](/Images/screenshot.png)
+✅ Archive Listing
+Retrieve file lists (size, timestamps, CRC, etc.) from existing archives programmatically.
 
-## 🎦 Videos
+✅ Password Support
+Handle encrypted archives with ease, both when creating and extracting, using secure password input.
 
-<!-- Download a recorded video by clicking [here](/Video/video.mp4) -->
+✅ Advanced RAR Options
+Expose almost the full range of RAR’s features: recovery records, archive locking, comment injection, timestamps, file exclusions, and more.
 
-<!-- See a recorded video by clicking on the following button:
-[![PROJECT_NAME DEMO VIDEO](Images/demo_video.jpg)](https://www.youtube.com/watch?v=XXXXXXXXX)  -->
+✅ Multi-volume Archive Handling
+Create and extract archives split into multiple volumes — ideal for large datasets or removable media.
 
-## 📝 Requirements
+✅ Error Handling and Output Parsing
+Automatically parse output from rar.exe, detect errors, and raise structured exceptions where appropriate.
 
-- Microsoft Windows OS.
+✅ Cross-language Usability
+Though written in VB.NET, the wrapper is compiled into a .NET assembly (a dll library), making it easy to use in C#, F#, and other .NET-supported languages.
+
+✅ No External Dependencies
+Only dependency is rar.exe from RARLab — no third-party libraries required.
+
+## 🧰 Requirements
+
+- [`rar.exe`](https://www.rarlab.com/download.htm) from RARLab's WinRAR (command-line version only). Please note that rar.exe requires is not free, it requires a product license (that one from a licensed WinRAR product).
 
 ## 🤖 Getting Started
 
-Download the latest compilation by clicking [here](https://github.com/ElektroStudios/PROJECT_NAME/releases/latest).
+Clone this repository or download the latest compilation by clicking [here](https://github.com/ElektroStudios/RARLab-RAR-Wrapper-Library-for-NET/releases/latest).
+
+Add the project to your solution or reference the compiled DLL file.
+
+Ensure rar.exe is present in your system environment path or specify its full path in the wrapper configuration. A product license would also be required for almost all the rar.exe functionalities.
+
+Start compressing or extracting archives with simple method calls!
 
 ## 🔄 Change Log
 
 Explore the complete list of changes, bug fixes, and improvements across different releases by clicking [here](/Docs/CHANGELOG.md).
 
-## 🏆 Credits
-
-This work relies on the following resources: 
-
- - [.NET Framework](https://dotnet.microsoft.com/en-us/download/dotnet-framework)
-
 ## ⚠️ Disclaimer:
 
 This Work (the repository and the content provided in) is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the Work or the use or other dealings in the Work.
 
-This Work has no affiliation, approval or endorsement by the author(s) of the third-party libraries used by this Work.
+This Work has no affiliation, approval or endorsement by the author(s) of the third-party libraries used by this Work, nor by RARLab, the registered company and trademark owner of rar.exe.
 
 ## 💪 Contributing
 
-Your contribution is highly appreciated!. If you have any ideas, suggestions, or encounter issues, feel free to open an issue by clicking [here](https://github.com/ElektroStudios/PROJECT_NAME/issues/new/choose). 
+Your contribution is highly appreciated!. If you have any ideas, suggestions, or encounter issues, feel free to open an issue by clicking [here](https://github.com/ElektroStudios/RARLab-RAR-Wrapper-Library-for-NET/issues/new/choose). 
 
 Your input helps make this Work better for everyone. Thank you for your support! 🚀
 
