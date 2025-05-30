@@ -38,6 +38,17 @@ Listing
 Archive
  -->
 
+---
+> This source code is freely distributed as part of the **"DevCase Class Library for .NET Developers"**.  
+>  
+> If you find this library useful, consider supporting my work by purchasing the full DevCase suite.  
+> It includes a powerful set of APIs covering a wide range of features and development topics.  
+>  
+> 🔗 [Visit the purchase page here](https://github.com/ElektroStudios/DevCase.github.io)  
+>  
+> Thank you for your support! 🙏
+
+
 # 📦 RARLab's `rar.exe` .NET Wrapper Library
 
 A full-featured .NET wrapper for RARLab's official `rar.exe` command-line tool. This library empowers .NET developers to seamlessly access and control almost all the functionality provided by `rar.exe` — such as compressing, extracting, listing, testing, creating recovery volumes and managing RAR archives — from within their applications.
