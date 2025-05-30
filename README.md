@@ -18,9 +18,27 @@ windows-application
 windows-applications
 windows-forms
 winforms
+ZIP
+RAR
+rar.exe
+WinRAR
+RARLab
+Library
+DLL
+Wrapper
+Compression
+Compressed
+Compress
+Extraction
+Extracted
+Extract
+Test
+Testing
+Listing
+Archive
  -->
 
-# 📦 RARLab's `rar.exe` .NET Wrapper
+# 📦 RARLab's `rar.exe` .NET Wrapper Library
 
 A full-featured .NET wrapper for RARLab's official `rar.exe` command-line tool. This library empowers .NET developers to seamlessly access and control almost all the functionality provided by `rar.exe` — such as compressing, extracting, listing, testing, creating recovery volumes and managing RAR archives — from within their applications.
 
