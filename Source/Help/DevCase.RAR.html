@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DevCase.RAR.dll</title>
+    <link rel="icon" href="https://developercommunity.visualstudio.com/favicon.ico" type="image/x-icon">
+    <style>
+      body {font-family: Arial, sans-serif; background-color: #191B1C; color: white;}
+      h1 {color: FloralWhite;}
+      h2 {color: FloralWhite;}
+      h3 {color: IndianRed;}
+      pre {background-color: #343A40; padding: 10px; border-radius: 5px;}
+      details[open]  {background-color: #141512;}
+      summary  {cursor: pointer;}
+      a:link {color: #6FC6FF;}
+      a:visited {color: DarkRed;}
+      a:hover {color: #FF7F7F;}
+      a:active {color: #7FFF9F;}
+      .custom-underline {position: relative; display: inline;}
+      .custom-underline:after {content: ''; position: absolute; left: 0; bottom: -2px; width: 100%; border-bottom: 2px solid indianred;}
+      #HelpTitleContainer {background-color: darkslategray; padding: 20px; margin-top: 0px;}
+      #HelpTitle {margin: 0; color: white;}
+    </style>
+    <!-- Adds 'target="_blank"' to all hyperlinks in the body -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('a').attr('target', '_blank');
+      });
+    </script>
+    <!-- Automated way to set the text for the first heading of the body -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var titleText = document.title; 
+        var element = document.getElementById('HelpTitle'); 
+        element.textContent = 'Additional documentation for ' + titleText + ' assembly.';
+      });
+    </script>
+  </head>
+  <body>
+    <div id="HelpTitleContainer">
+      <h2 id="HelpTitle">Título del encabezado</h2>
+    </div>
+    <br>
+
+    <h2 class="custom-underline">Third Party Software</h2>
+    <br><br>Some functionalities of this assembly may require to install one or all of the listed applications.<br>
+
+    <ul>
+      <li>
+        <h3>RARLab's rar.exe (from WinRAR)</h3>
+        <details>
+          <summary>Details</summary>
+          <p><strong>Description:</strong> WinRAR is a Windows software utility for creating, viewing, and extracting compressed archive files, particularly RAR.</p>
+          <p><strong>Official Website:</strong> <a href="https://www.win-rar.com/">https://www.win-rar.com/</a></p>
+        </details>
+      </li>
+    </ul>
+
+  </body>
+</html>

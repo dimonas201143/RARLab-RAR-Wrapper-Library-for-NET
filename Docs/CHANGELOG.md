@@ -1,12 +1,4 @@
-# REPOSITORY NAME Change Log 📋
+# DevCase `rar.exe` wrapper library for .NET Change Log 📋
 
-## v1.1 *(current)* 🆕
-#### 🚀 New Features:
-    • Description
-#### 🛠️ Fixes:
-    • Description
-#### 🌟 Improvements:
-    • Description
-
-## v1.0 🔄
-Initial Release.
+## v6.1 *(current)* 🆕
+Initial Release on GitHub.
