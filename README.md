@@ -118,30 +118,30 @@ Imports DevCase.RAR
 Imports DevCase.RAR.Commands
 ```
 ```VBNET
-  Dim archivePath As String = "C:\New Archive.rar"
-  Dim filesToAdd As String = "C:\Directory to add\"
-  
-  Dim creationCommand As New RarCreationCommand(RarCreationMode.Add, archivePath, filesToAdd) With {
-      .RarExecPath = ".\rar.exe",
-      .RarLicenseData = "(Your license key)",
-      .RecurseSubdirectories = True,
-      .EncryptionProperties = Nothing,
-      .SolidCompression = False,
-      .CompressionMode = RarCompressionMode.Normal,
-      .DictionarySize = RarDictionarySize.Mb__128,
-      .OverwriteMode = RarOverwriteMode.Overwrite,
-      .FilePathMode = RarFilePathMode.ExcludeBaseDirFromFileNames,
-      .FileTimestamps = RarFileTimestamps.All,
-      .AddQuickOpenInformation = TriState.True,
-      .ProcessHardLinksAsLinks = True,
-      .ProcessSymbolicLinksAsLinks = TriState.True,
-      .DuplicateFileMode = RarDuplicateFileMode.Enabled,
-      .FileChecksumMode = RarFileChecksumMode.BLAKE2sp,
-      .ArchiveComment = New RarArchiveComment("Hello world!"),
-      .RecoveryRecordPercentage = 0,
-      .SplitIntoVolumes = Nothing,
-      .FileTypesToStore = Nothing
-  }
+Dim archivePath As String = "C:\New Archive.rar"
+Dim filesToAdd As String = "C:\Directory to add\"
+
+Dim command As New RarCreationCommand(RarCreationMode.Add, archivePath, filesToAdd) With {
+    .RarExecPath = ".\rar.exe",
+    .RarLicenseData = "(Your license key)",
+    .RecurseSubdirectories = True,
+    .EncryptionProperties = Nothing,
+    .SolidCompression = False,
+    .CompressionMode = RarCompressionMode.Normal,
+    .DictionarySize = RarDictionarySize.Mb__128,
+    .OverwriteMode = RarOverwriteMode.Overwrite,
+    .FilePathMode = RarFilePathMode.ExcludeBaseDirFromFileNames,
+    .FileTimestamps = RarFileTimestamps.All,
+    .AddQuickOpenInformation = TriState.True,
+    .ProcessHardLinksAsLinks = True,
+    .ProcessSymbolicLinksAsLinks = TriState.True,
+    .DuplicateFileMode = RarDuplicateFileMode.Enabled,
+    .FileChecksumMode = RarFileChecksumMode.BLAKE2sp,
+    .ArchiveComment = New RarArchiveComment("Hello world!"),
+    .RecoveryRecordPercentage = 0,
+    .VolumeSplitOptions = Nothing,
+    .FileTypesToStore = Nothing
+}
 ```
 C#
 ---
@@ -153,7 +153,7 @@ using DevCase.RAR.Commands;
 string archivePath = "C:\\New Archive.rar";
 string filesToAdd = "C:\\Directory to add\\";
 
-RarCreationCommand creationCommand = new RarCreationCommand(RarCreationMode.Add, archivePath, filesToAdd) {
+RarCreationCommand command = new RarCreationCommand(RarCreationMode.Add, archivePath, filesToAdd) {
     RarExecPath = ".\\rar.exe",
     RarLicenseData = "(Your license key)",
     RecurseSubdirectories = true,
@@ -171,20 +171,25 @@ RarCreationCommand creationCommand = new RarCreationCommand(RarCreationMode.Add,
     FileChecksumMode = RarFileChecksumMode.BLAKE2sp,
     ArchiveComment = new RarArchiveComment("Hello world!"),
     RecoveryRecordPercentage = 0,
-    SplitIntoVolumes = null,
+    VolumeSplitOptions = null,
     FileTypesToStore = null
 };
 ```
 ### To retrieve the full command-line arguments of our Command:
 
-    Console.WriteLine($"Command-line arguments: {creationCommand}")
+```
+Console.WriteLine($"Command-line arguments: {command}")
+```
+```
+MessageBox.Show(command.ToString())
+```
 
 ### Execute our Command using the `RarCommandExecutor` class:
 
 VB NET
 ---
 ```VBNET
-Using rarExecutor As New RarCommandExecutor(creationCommand)
+Using rarExecutor As New RarCommandExecutor(command)
 
     AddHandler rarExecutor.OutputDataReceived,
         Sub(sender As Object, e As DataReceivedEventArgs)
@@ -211,7 +216,7 @@ End Using
 C#
 ---
 ```CSharp
-using (RarCommandExecutor rarExecutor = new RarCommandExecutor(creationCommand)) {
+using (RarCommandExecutor rarExecutor = new RarCommandExecutor(command)) {
 
   rarExecutor.OutputDataReceived += (object sender, DataReceivedEventArgs e) => {
       Console.WriteLine($"[Output] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {e.Data}");
