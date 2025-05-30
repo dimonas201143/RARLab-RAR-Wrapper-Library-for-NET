@@ -111,7 +111,7 @@ Start compressing or extracting archives with simple method calls!
 
 ### Construct a Command for RAR archive creation using the `RarCreationCommand` class:
 
-VB NET
+#### VB NET
 ---
 ```
 Imports DevCase.RAR
@@ -143,7 +143,7 @@ Dim command As New RarCreationCommand(RarCreationMode.Add, archivePath, filesToA
     .FileTypesToStore = Nothing
 }
 ```
-C#
+#### C#
 ---
 ```CSharp
 using DevCase.RAR;
@@ -186,7 +186,7 @@ MessageBox.Show(command.ToString())
 
 ### Execute our Command using the `RarCommandExecutor` class:
 
-VB NET
+#### VB NET
 ---
 ```VBNET
 Using rarExecutor As New RarCommandExecutor(command)
@@ -213,7 +213,7 @@ Using rarExecutor As New RarCommandExecutor(command)
     Dim exitcode As RarExitCode = rarExecutor.ExecuteRarAsync().Result
 End Using
 ```
-C#
+#### C#
 ---
 ```CSharp
 using (RarCommandExecutor rarExecutor = new RarCommandExecutor(command)) {
