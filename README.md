@@ -223,8 +223,7 @@ using (RarCommandExecutor rarExecutor = new RarCommandExecutor(command)) {
   };
 
   rarExecutor.ErrorDataReceived += (object sender, DataReceivedEventArgs e) => {
-      if (e.Data != null)
-      {
+      if (e.Data != null) {
         Console.WriteLine($"[Error] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {e.Data}");
       }
   };
