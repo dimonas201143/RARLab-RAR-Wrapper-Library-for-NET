@@ -109,13 +109,13 @@ Start compressing or extracting archives with simple method calls!
 
 ## 📝 Usage Examples
 
-### Prepare a full featured command for RAR archive creation using the `RarCreationCommand` class:
+### Prepare a featured command for RAR archive creation using the `RarCreationCommand` class:
 
 VB NET:
-
+```
     Imports DevCase.RAR
     Imports DevCase.RAR.Commands
-
+```
     Dim archivePath As String = "C:\New Archive.rar"
     Dim filesToAdd As String = "C:\Directory to add\"
     
@@ -142,10 +142,10 @@ VB NET:
     }
 
 C#:
-
+```
     using DevCase.RAR;
     using DevCase.RAR.Commands;
-
+```
     string archivePath = "C:\\New Archive.rar";
     string filesToAdd = "C:\\Directory to add\\";
     
@@ -175,7 +175,7 @@ C#:
 
     Console.WriteLine($"Command-line arguments: {creationCommand}")
 
-### Execute the command using the `RarCommandExecutor` class:
+### Execute our command using the `RarCommandExecutor` class:
 
 VB NET:
 
