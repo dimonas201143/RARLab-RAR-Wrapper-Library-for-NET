@@ -113,64 +113,66 @@ Start compressing or extracting archives with simple method calls!
 
 VB NET:
 ```
-    Imports DevCase.RAR
-    Imports DevCase.RAR.Commands
+Imports DevCase.RAR
+Imports DevCase.RAR.Commands
 ```
-    Dim archivePath As String = "C:\New Archive.rar"
-    Dim filesToAdd As String = "C:\Directory to add\"
-    
-    Dim creationCommand As New RarCreationCommand(RarCreationMode.Add, archivePath, filesToAdd) With {
-        .RarExecPath = ".\rar.exe",
-        .RarLicenseData = "(Your license key)",
-        .RecurseSubdirectories = True,
-        .EncryptionProperties = Nothing,
-        .SolidCompression = False,
-        .CompressionMode = RarCompressionMode.Normal,
-        .DictionarySize = RarDictionarySize.Mb__128,
-        .OverwriteMode = RarOverwriteMode.Overwrite,
-        .FilePathMode = RarFilePathMode.ExcludeBaseDirFromFileNames,
-        .FileTimestamps = RarFileTimestamps.All,
-        .AddQuickOpenInformation = TriState.True,
-        .ProcessHardLinksAsLinks = True,
-        .ProcessSymbolicLinksAsLinks = TriState.True,
-        .DuplicateFileMode = RarDuplicateFileMode.Enabled,
-        .FileChecksumMode = RarFileChecksumMode.BLAKE2sp,
-        .ArchiveComment = New RarArchiveComment("Hello world!"),
-        .RecoveryRecordPercentage = 0,
-        .SplitIntoVolumes = Nothing,
-        .FileTypesToStore = Nothing
-    }
-
+```VBNET
+  Dim archivePath As String = "C:\New Archive.rar"
+  Dim filesToAdd As String = "C:\Directory to add\"
+  
+  Dim creationCommand As New RarCreationCommand(RarCreationMode.Add, archivePath, filesToAdd) With {
+      .RarExecPath = ".\rar.exe",
+      .RarLicenseData = "(Your license key)",
+      .RecurseSubdirectories = True,
+      .EncryptionProperties = Nothing,
+      .SolidCompression = False,
+      .CompressionMode = RarCompressionMode.Normal,
+      .DictionarySize = RarDictionarySize.Mb__128,
+      .OverwriteMode = RarOverwriteMode.Overwrite,
+      .FilePathMode = RarFilePathMode.ExcludeBaseDirFromFileNames,
+      .FileTimestamps = RarFileTimestamps.All,
+      .AddQuickOpenInformation = TriState.True,
+      .ProcessHardLinksAsLinks = True,
+      .ProcessSymbolicLinksAsLinks = TriState.True,
+      .DuplicateFileMode = RarDuplicateFileMode.Enabled,
+      .FileChecksumMode = RarFileChecksumMode.BLAKE2sp,
+      .ArchiveComment = New RarArchiveComment("Hello world!"),
+      .RecoveryRecordPercentage = 0,
+      .SplitIntoVolumes = Nothing,
+      .FileTypesToStore = Nothing
+  }
+```
 C#:
+```CSharp
+using DevCase.RAR;
+using DevCase.RAR.Commands;
 ```
-    using DevCase.RAR;
-    using DevCase.RAR.Commands;
-```
-    string archivePath = "C:\\New Archive.rar";
-    string filesToAdd = "C:\\Directory to add\\";
-    
-    RarCreationCommand creationCommand = new RarCreationCommand(RarCreationMode.Add, archivePath, filesToAdd) {
-        RarExecPath = ".\\rar.exe",
-        RarLicenseData = "(Your license key)",
-        RecurseSubdirectories = true,
-        EncryptionProperties = null,
-        SolidCompression = false,
-        CompressionMode = RarCompressionMode.Normal,
-        DictionarySize = RarDictionarySize.Mb__128,
-        OverwriteMode = RarOverwriteMode.Overwrite,
-        FilePathMode = RarFilePathMode.ExcludeBaseDirFromFileNames,
-        FileTimestamps = RarFileTimestamps.All,
-        AddQuickOpenInformation = Microsoft.VisualBasic.TriState.True,
-        ProcessHardLinksAsLinks = true,
-        ProcessSymbolicLinksAsLinks = Microsoft.VisualBasic.TriState.True,
-        DuplicateFileMode = RarDuplicateFileMode.Enabled,
-        FileChecksumMode = RarFileChecksumMode.BLAKE2sp,
-        ArchiveComment = new RarArchiveComment("Hello world!"),
-        RecoveryRecordPercentage = 0,
-        SplitIntoVolumes = null,
-        FileTypesToStore = null
-    };
+```CSharp
+string archivePath = "C:\\New Archive.rar";
+string filesToAdd = "C:\\Directory to add\\";
 
+RarCreationCommand creationCommand = new RarCreationCommand(RarCreationMode.Add, archivePath, filesToAdd) {
+    RarExecPath = ".\\rar.exe",
+    RarLicenseData = "(Your license key)",
+    RecurseSubdirectories = true,
+    EncryptionProperties = null,
+    SolidCompression = false,
+    CompressionMode = RarCompressionMode.Normal,
+    DictionarySize = RarDictionarySize.Mb__128,
+    OverwriteMode = RarOverwriteMode.Overwrite,
+    FilePathMode = RarFilePathMode.ExcludeBaseDirFromFileNames,
+    FileTimestamps = RarFileTimestamps.All,
+    AddQuickOpenInformation = Microsoft.VisualBasic.TriState.True,
+    ProcessHardLinksAsLinks = true,
+    ProcessSymbolicLinksAsLinks = Microsoft.VisualBasic.TriState.True,
+    DuplicateFileMode = RarDuplicateFileMode.Enabled,
+    FileChecksumMode = RarFileChecksumMode.BLAKE2sp,
+    ArchiveComment = new RarArchiveComment("Hello world!"),
+    RecoveryRecordPercentage = 0,
+    SplitIntoVolumes = null,
+    FileTypesToStore = null
+};
+```
 ### To retrieve the full command-line arguments of our Command:
 
     Console.WriteLine($"Command-line arguments: {creationCommand}")
@@ -178,55 +180,56 @@ C#:
 ### Execute our command using the `RarCommandExecutor` class:
 
 VB NET:
+```VBNET
+Using rarExecutor As New RarCommandExecutor(creationCommand)
 
-    Using rarExecutor As New RarCommandExecutor(creationCommand)
-    
-        AddHandler rarExecutor.OutputDataReceived,
-            Sub(sender As Object, e As DataReceivedEventArgs)
-                Console.WriteLine($"[Output] {Date.Now:yyyy-MM-dd HH:mm:ss} - {e.Data}")
-            End Sub
-    
-        AddHandler rarExecutor.ErrorDataReceived,
-            Sub(sender As Object, e As DataReceivedEventArgs)
-                If e.Data IsNot Nothing Then
-                    Console.WriteLine($"[Error] {Date.Now:yyyy-MM-dd HH:mm:ss} - {e.Data}")
-                End If
-            End Sub
-    
-        AddHandler rarExecutor.Exited,
-            Sub(sender As Object, e As EventArgs)
-                Dim pr As Process = DirectCast(sender, Process)
-                Dim rarExitCode As RarExitCode = DirectCast(pr.ExitCode, RarExitCode)
-                Console.WriteLine($"[Exited] {Date.Now:yyyy-MM-dd HH:mm:ss} - rar.exe process has terminated with exit code {pr.ExitCode} ({rarExitCode})")
-            End Sub
-    
-        Dim exitcode As RarExitCode = rarExecutor.ExecuteRarAsync().Result
-    End Using
+    AddHandler rarExecutor.OutputDataReceived,
+        Sub(sender As Object, e As DataReceivedEventArgs)
+            Console.WriteLine($"[Output] {Date.Now:yyyy-MM-dd HH:mm:ss} - {e.Data}")
+        End Sub
+
+    AddHandler rarExecutor.ErrorDataReceived,
+        Sub(sender As Object, e As DataReceivedEventArgs)
+            If e.Data IsNot Nothing Then
+                Console.WriteLine($"[Error] {Date.Now:yyyy-MM-dd HH:mm:ss} - {e.Data}")
+            End If
+        End Sub
+
+    AddHandler rarExecutor.Exited,
+        Sub(sender As Object, e As EventArgs)
+            Dim pr As Process = DirectCast(sender, Process)
+            Dim rarExitCode As RarExitCode = DirectCast(pr.ExitCode, RarExitCode)
+            Console.WriteLine($"[Exited] {Date.Now:yyyy-MM-dd HH:mm:ss} - rar.exe process has terminated with exit code {pr.ExitCode} ({rarExitCode})")
+        End Sub
+
+    Dim exitcode As RarExitCode = rarExecutor.ExecuteRarAsync().Result
+End Using
+```
 
 C#:
+```CSharp
+using (RarCommandExecutor rarExecutor = new RarCommandExecutor(creationCommand)) {
 
-    using (RarCommandExecutor rarExecutor = new RarCommandExecutor(creationCommand)) {
-    
-      rarExecutor.OutputDataReceived += (object sender, DataReceivedEventArgs e) => {
-          Console.WriteLine($"[Output] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {e.Data}");
-      };
-    
-      rarExecutor.ErrorDataReceived += (object sender, DataReceivedEventArgs e) => {
-          if (e.Data != null)
-          {
-            Console.WriteLine($"[Error] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {e.Data}");
-          }
-      };
-    
-      rarExecutor.Exited += (object sender, EventArgs e) => {
-          Process pr = (Process)sender;
-          RarExitCode rarExitCode = (RarExitCode)pr.ExitCode;
-          Console.WriteLine($"[Exited] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - rar.exe process has terminated with exit code {pr.ExitCode} ({rarExitCode})");
-      };
-    
-      RarExitCode exitcode = rarExecutor.ExecuteRarAsync().Result;
-    }
+  rarExecutor.OutputDataReceived += (object sender, DataReceivedEventArgs e) => {
+      Console.WriteLine($"[Output] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {e.Data}");
+  };
 
+  rarExecutor.ErrorDataReceived += (object sender, DataReceivedEventArgs e) => {
+      if (e.Data != null)
+      {
+        Console.WriteLine($"[Error] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {e.Data}");
+      }
+  };
+
+  rarExecutor.Exited += (object sender, EventArgs e) => {
+      Process pr = (Process)sender;
+      RarExitCode rarExitCode = (RarExitCode)pr.ExitCode;
+      Console.WriteLine($"[Exited] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - rar.exe process has terminated with exit code {pr.ExitCode} ({rarExitCode})");
+  };
+
+  RarExitCode exitcode = rarExecutor.ExecuteRarAsync().Result;
+}
+```
 ## 🔄 Change Log
 
 Explore the complete list of changes, bug fixes, and improvements across different releases by clicking [here](/Docs/CHANGELOG.md).
