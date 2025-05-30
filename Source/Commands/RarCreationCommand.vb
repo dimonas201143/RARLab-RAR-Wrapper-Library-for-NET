@@ -33,7 +33,7 @@
 '     .FileChecksumMode = RarFileChecksumMode.BLAKE2sp,
 '     .ArchiveComment = New RarArchiveComment("Hello world!"),
 '     .RecoveryRecordPercentage = 0,
-'     .SplitIntoVolumes = Nothing,
+'     .VolumeSplitOptions = Nothing,
 '     .FileTypesToStore = Nothing
 ' }
 ' 
